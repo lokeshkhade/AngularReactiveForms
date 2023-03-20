@@ -6,31 +6,38 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EntryComponent } from './entry/entry.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
-import { MatRadioModule } from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { DatePipe} from '@angular/common';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
+import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent,
-    EntryComponent
+    CourseComponent,StudentdetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    HttpClientModule,
+    MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatSelectModule,
-    MatRadioModule,
-    MatCardModule
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [DatePipe, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

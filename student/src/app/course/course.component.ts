@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-course',
@@ -11,14 +12,27 @@ export class CourseComponent implements OnInit {
     name: [''],
     
   });
+  course: any;
+  data: any;
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private ds:DataService) { }
 
   ngOnInit(): void {
   }
+
+  getCourse() {
+    this.ds.getData('courses').subscribe(res => {
+      this.course = res;
+      console.log(this.course);
+
+    });
+  }
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.courseForm.value);
+    this.ds.postData('courses', this.courseForm.value).subscribe(res => {
+      this.data = res;
+      if (this.data)
+        alert('Data Saved Succesfully');
+    });
   }
 }
