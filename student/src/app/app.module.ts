@@ -6,25 +6,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import { DatePipe} from '@angular/common';
+import { MatSelectModule } from '@angular/material/select';
+import { DatePipe } from '@angular/common';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent,StudentdetailsComponent
+    CourseComponent, StudentdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +43,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatSortModule,
     BrowserAnimationsModule
   ],
-  providers: [DatePipe, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
+  providers: [DatePipe, { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
