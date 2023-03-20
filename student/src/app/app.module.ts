@@ -17,6 +17,9 @@ import { DatePipe} from '@angular/common';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { StudentdetailsComponent } from './studentdetails/studentdetails.compone
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     BrowserAnimationsModule
   ],
   providers: [DatePipe, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
