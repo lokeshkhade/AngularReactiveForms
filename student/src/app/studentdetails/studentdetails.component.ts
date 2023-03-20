@@ -49,5 +49,8 @@ export class StudentdetailsComponent implements OnInit {
         alert('Data Saved Succesfully');
     });
   }
+   onClear(){
+    this.studentdetailsForm.reset();
+   }
 
 }
